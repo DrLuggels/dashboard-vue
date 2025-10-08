@@ -132,7 +132,7 @@ if (cookie.value !== 'accepted') {
           class="bg-elevated/25"
           :ui="{ footer: 'lg:border-t lg:border-default' }"
         >
-          <template #header="{ collapsed }">
+         <template #header="{ collapsed }">
             <TeamsMenu :collapsed="collapsed" />
           </template>
 
