@@ -11,6 +11,18 @@ const app = createApp(App)
 app.use(createRouter({
   routes: [
     { path: '/', component: () => import('./pages/index.vue') },
+    {
+      path: '/admin',
+      component: () => import('./pages/admin.vue'),
+      children: [
+        { path: '', component: () => import('./pages/admin/index.vue') },
+        { path: 'ministranten', component: () => import('./pages/admin/ministranten.vue') },
+        { path: 'termine', component: () => import('./pages/admin/termine.vue') },
+        { path: 'standorte', component: () => import('./pages/admin/standorte.vue') },
+        { path: 'rollen-berechtigungen', component: () => import('./pages/admin/rollen-berechtigungen.vue') },
+      ]
+    },
+    //{path: '/statistics', component: () => import('./pages/statistics.vue') },
     { path: '/inbox', component: () => import('./pages/inbox.vue') },
     { path: '/customers', component: () => import('./pages/customers.vue') },
     {
